@@ -7,8 +7,8 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const mongoSanitize = require('express-mongo-sanitize');
 const rateLimit = require('express-rate-limit');
-const { v1Router } = require('./routes/v1');
-const { baseRouter } = require('./routes/base');
+const v1Router = require('./routes/v1');
+const baseRouter = require('./routes/base');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -25,7 +25,7 @@ app.use(limiter);
 app.use(morgan('dev'));
 
 // routes
-app.use('api/v1', v1Router);
+app.use('/api/v1', v1Router);
 app.use('/', baseRouter);
 
 // handle errors and exceptions
