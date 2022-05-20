@@ -25,6 +25,7 @@ app.use(limiter);
 app.use(morgan('dev'));
 
 // routes
+app.get('/', express.static(__dirname + '/views'));
 app.use('/api/v1', v1Router);
 app.use('/', baseRouter);
 
