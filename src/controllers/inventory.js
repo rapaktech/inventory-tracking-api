@@ -12,8 +12,8 @@ const addOne = asyncHandler(async (req, res, next) => {
     if (validateUserInput.error) {
         const errorFieldName = validateUserInput.error.details[0].path[0];
         let message = '';
-        if (errorFieldName === 'name') message = 'Name has to start with a letter, can contain spaces, numbers and hyphens, must be at least 3 characters, and no more than 30 characters.';
-        if (errorFieldName === 'description') message = 'Description has to be a string';
+        if (errorFieldName === 'name') message = 'Name has to start with a letter, can contain spaces, numbers and hyphens, must be at least 3 characters, and no more than 100 characters';
+        if (errorFieldName === 'description') message = 'Description must be at least 3 characters, and no more than 1000 characters';
         if (errorFieldName === 'price') message = 'Price has to be a number greater than 0.01';
         if (errorFieldName === 'quantity') message = 'Quantity has to be a number greater than 1';
         return sendResponse('error', StatusCodes.BAD_REQUEST, message, {}, res);
@@ -61,10 +61,8 @@ const updateOne = asyncHandler(async (req, res, next) => {
         if (validateUserInput.error) {
             const errorFieldName = validateUserInput.error.details[0].path[0];
             let message = '';
-            if (validateUserInput.error.details[0].path[0] === 'name') {
-                message = 'Name has to start with a letter, can contain spaces, numbers and hyphens, must be at least 3 characters, and no more than 30 characters.';
-            }
-            if (errorFieldName === 'description') message = 'Description has to be a string';
+            if (errorFieldName === 'name') message = 'Name has to start with a letter, can contain spaces, numbers and hyphens, must be at least 3 characters, and no more than 100 characters';
+            if (errorFieldName === 'description') message = 'Description must be at least 3 characters, and no more than 1000 characters';
             if (errorFieldName === 'price') message = 'Price has to be a number greater than 0.01';
             if (errorFieldName === 'quantity') message = 'Quantity has to be a number greater than 1';
             return sendResponse('error', StatusCodes.BAD_REQUEST, message, {}, res);
@@ -92,6 +90,7 @@ const updateOne = asyncHandler(async (req, res, next) => {
 const deleteOne = asyncHandler(async (req, res, next) => {
     const SKU = req.params.SKU;
     const { comment } = req.body;
+    if (comment.length > 100) return sendResponse('error', StatusCodes.BAD_REQUEST, 'Comment cannot be more than 100 characters', {}, res);
     const deletedInventoryListing = await Inventory.findOneAndUpdate({ SKU: SKU, isDeleted: false }, { 
         isDeleted: true,
         comment: String(comment)
