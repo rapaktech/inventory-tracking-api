@@ -1,6 +1,6 @@
 # Inventory Tracking Application
 
-This is a basic inventory tracking service, built using Node, Express and MongoDB for database
+This is a basic inventory tracking service, built using Node.js, Express.js and MongoDB for database
 
 ## _API Use Guide:_
 To start the server: 
