@@ -90,7 +90,7 @@ const updateOne = asyncHandler(async (req, res, next) => {
 const deleteOne = asyncHandler(async (req, res, next) => {
     const SKU = req.params.SKU;
     const { comment } = req.body;
-    if (comment.length > 100) return sendResponse('error', StatusCodes.BAD_REQUEST, 'Comment cannot be more than 100 characters', {}, res);
+    if (comment.length < 1 || comment.length > 100) return sendResponse('error', StatusCodes.BAD_REQUEST, 'Comment cannot be more than 100 characters', {}, res);
     const deletedInventoryListing = await Inventory.findOneAndUpdate({ SKU: SKU, isDeleted: false }, { 
         isDeleted: true,
         comment: String(comment)
