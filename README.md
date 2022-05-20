@@ -5,7 +5,7 @@ This is a basic inventory tracking service, built using Node, Express and MongoD
 ## _API Use Guide:_
 To start the server: 
 * Clone this repository
-* Open a terminal window in the root folder created
+* Open a terminal window in the root of the folder created
 * Run 'npm start'
 
 ### Functionalities:
