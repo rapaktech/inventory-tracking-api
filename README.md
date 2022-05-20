@@ -9,7 +9,7 @@ To start the server:
 * Run 'npm start'
 
 ### Functionalities:
-* To create an inventory item, send a POST request to http://localhost:8000/api/v1/inventory/add, with a JSON object:
+* To create an inventory item, send a **POST** request to http://localhost:8000/api/v1/inventory/add, with a JSON object:
 
 ``` JSON
 
@@ -21,11 +21,11 @@ To start the server:
   }
 
 ```
-* To get all inventory listings, send a GET request to http://localhost:8000/api/v1/inventory/
+* To get all inventory listings, send a **GET** request to http://localhost:8000/api/v1/inventory/
 
-* To get a single inventory listing, send a GET request to http://localhost:8000/api/v1/inventory/get/:SKU, where ':SKU' is the listing's store keeping unit (SKU) number gotten from the get all request above
+* To get a single inventory listing, send a **GET** request to http://localhost:8000/api/v1/inventory/get/:SKU, where ':SKU' is the listing's store keeping unit (SKU) number gotten from the get all request above
 
-* To update an inventory listing, send a PUT request to http://localhost:8000/api/v1/inventory/update/:SKU, with a JSON object including at least one of the following properties:
+* To update an inventory listing, send a **PUT** request to http://localhost:8000/api/v1/inventory/update/:SKU, with a JSON object including at least one of the following properties:
 
 ``` JSON
 
@@ -37,7 +37,7 @@ To start the server:
   }
 
 ```
-* To delete an inventory item, send a DELETE request to http://localhost:8000/api/v1/inventory/delete/:SKU, with an optional JSON object:
+* To delete an inventory item, send a **DELETE** request to http://localhost:8000/api/v1/inventory/delete/:SKU, with an optional JSON object:
 
 ``` JSON
 
@@ -48,8 +48,8 @@ To start the server:
   }
 
 ```
-* To get all deleted inventory listings, send a GET request to http://localhost:8000/api/v1/inventory/deleted
+* To get all deleted inventory listings, send a **GET** request to http://localhost:8000/api/v1/inventory/deleted
 
-* To undelete an inventory item, send a PATCH request to http://localhost:8000/api/v1/inventory/undelete/:SKU
+* To undelete an inventory item, send a **PATCH** request to http://localhost:8000/api/v1/inventory/undelete/:SKU
 
 Enjoy!
