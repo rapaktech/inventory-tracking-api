@@ -4,7 +4,7 @@ This is a basic inventory tracking service, built using Node.js, Express.js and 
 
 Find the use documentation (with examples) at: https://documenter.getpostman.com/view/20398736/UyxnD4hi
 
-To run this app on Replit, find the online repository at: https://replit.com/@rapaktech/inventory-tracking-api
+To run this app on Replit with the instructions below (see API Use Guide below), find the online repository at: https://replit.com/@rapaktech/inventory-tracking-api
 
 To see the live app, visit: https://inventory-tracking-api.rapaktech.repl.co
 
