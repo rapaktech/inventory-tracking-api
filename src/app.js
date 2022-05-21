@@ -10,6 +10,7 @@ const rateLimit = require('express-rate-limit');
 const v1Router = require('./routes/v1');
 const baseRouter = require('./routes/base');
 
+app.get('/', express.static(__dirname + '/views'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
@@ -25,7 +26,6 @@ app.use(limiter);
 app.use(morgan('dev'));
 
 // routes
-app.get('/', express.static(__dirname + '/views'));
 app.use('/api/v1', v1Router);
 app.use('/', baseRouter);
 
