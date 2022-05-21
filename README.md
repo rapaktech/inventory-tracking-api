@@ -1,12 +1,16 @@
 # Inventory Tracking API
 
-This is a basic inventory tracking service, built using Node.js, Express.js and MongoDB for database
+This is a basic inventory tracking service API, built using Node.js, Express.js and MongoDB for database
 
-Find the use documentation (with examples) at: <https://documenter.getpostman.com/view/20398736/UyxnD4hi>
+To run this API on Replit with the instructions below (see API Use Guide below), find the online repository at: <https://replit.com/@rapaktech/inventory-tracking-api>
 
-To run this app on Replit with the instructions below (see API Use Guide below), find the online repository at: <https://replit.com/@rapaktech/inventory-tracking-api>
+To see the live app (frontend), visit: <https://inventory-tracking-app.rapaktech.repl.co>
 
-To see the live app, visit: <https://inventory-tracking-api.rapaktech.repl.co>
+The frontend code is on Replit at: <https://replit.com/@rapaktech/inventory-tracking-app>
+
+The API (backend) serving the live app is deployed on Heroku at <https://inventory-tracking-api.herokuapp.com>
+
+Find the use documentation for the server (with examples) at: <https://documenter.getpostman.com/view/20398736/UyxnD4hi>
 
 ## _API Use Guide:_
 
