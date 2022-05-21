@@ -83,14 +83,14 @@ const updateOne = asyncHandler(async (req, res, next) => {
         return sendResponse('success', StatusCodes.OK, message, updatedInventoryListing, res);
     }
 
-    const message = 'All fields cannot be empty. Please include one of (name, description, price, quantity)';
+    const message = "All fields cannot be empty. Please include one of 'name', 'description', 'price' or 'quantity', to update";
     return sendResponse('error', StatusCodes.BAD_REQUEST, message, {}, res);
 });
 
 const deleteOne = asyncHandler(async (req, res, next) => {
     const SKU = req.params.SKU;
     const { comment } = req.body;
-    if (comment.length < 3 || comment.length > 100) return sendResponse('error', StatusCodes.BAD_REQUEST, 'Comment cannot be less than 3 characters, and cannot be more than 100 characters', {}, res);
+    if (comment.length > 100) return sendResponse('error', StatusCodes.BAD_REQUEST, 'Comment cannot be more than 100 characters', {}, res);
     const deletedInventoryListing = await Inventory.findOneAndUpdate({ SKU: SKU, isDeleted: false }, { 
         isDeleted: true,
         comment: String(comment)
