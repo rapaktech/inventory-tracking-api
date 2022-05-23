@@ -27,7 +27,7 @@ To start the server:
 ``` JSON
 
   {
-    "name": "String: has to start with a letter, can contain spaces, numbers and hyphens, must be at least 3 characters, and no more than 30 characters",
+    "name": "String: has to start with a letter, can contain spaces, numbers and hyphens, must be at least 3 characters, and no more than 100 characters",
     "description": "String: Description must be at least 3 characters, and no more than 1000 characters",
     "price": "Number: has to be a number greater than 0.01",
     "quantity": "Number: has to be a number greater than 1"
@@ -44,7 +44,7 @@ To start the server:
 ``` JSON
 
   {
-    "name": "String: has to start with a letter, can contain spaces, numbers and hyphens, must be at least 3 characters, and no more than 30 characters",
+    "name": "String: has to start with a letter, can contain spaces, numbers and hyphens, must be at least 3 characters, and no more than 100 characters",
     "description": "String: Description must be at least 3 characters, and no more than 1000 characters",
     "price": "Number: has to be a number greater than 0.01",
     "quantity": "Number: has to be a number greater than 1"
